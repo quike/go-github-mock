@@ -1,9 +1,9 @@
-VERSION 			:= 0.0.0
-COVERAGE_DIR 		:= ./target
-PACKAGES 			= ./...
-GOPATH 				:= $(shell go env GOPATH)
-HOST 				:= github.com
-OWNER 				:= migueleliasweb
+VERSION					:= 0.0.0
+COVERAGE_DIR		:= ./target
+PACKAGES				= ./...
+GOPATH					:= $(shell go env GOPATH)
+HOST						:= github.com
+OWNER						:= migueleliasweb
 
 init:
 	go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.56.2
