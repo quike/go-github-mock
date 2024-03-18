@@ -2,9 +2,10 @@ concurrency:
   group: ${{ github.repository }}-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+name: pr
+
 on: pull_request
 
-name: tests
 env:
   GO111MODULE: on
 
