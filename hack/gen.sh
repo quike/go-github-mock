@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
-if [ "$(git branch --show-current)" != "master" ]; then
-    echo "Not in master branch. Aborting."
+CURRENT_BRANCH=$(git branch --show-current)
+if [ "${CURRENT_BRANCH}" != "master" ] && [ "${CURRENT_BRANCH}" != "main" ]; then
+    echo "Not in master/main default branch. Aborting."
     exit 1
 fi
 
-BRANCH_NAME="update-gh-definitions-$(date '+%s')"
+BRANCH_NAME="chore/update-gh-definitions-$(date '+%s')"
 
-git checkout -b ${BRANCH_NAME}
+git checkout -b "${BRANCH_NAME}"
 
 go run main.go
 
@@ -18,4 +19,4 @@ fi
 
 git commit -am "Update GH definitions"
 
-git push origin ${BRANCH_NAME}
+git push origin "${BRANCH_NAME}"
