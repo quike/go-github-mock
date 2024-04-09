@@ -1,5 +1,5 @@
 VERSION					:= 0.0.0
-COVERAGE_DIR		:= ./target
+COVERAGE_DIR 		:= ./target
 PACKAGES				= ./...
 GOPATH					:= $(shell go env GOPATH)
 HOST						:= github.com
