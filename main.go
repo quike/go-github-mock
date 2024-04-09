@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"os/exec"
 
@@ -74,7 +73,7 @@ func main() {
 		"paths",
 	)
 
-	ioutil.WriteFile(
+	os.WriteFile(
 		gen.OUTPUT_FILEPATH,
 		buf.Bytes(),
 		0755,
